@@ -4,7 +4,9 @@
   "description": "��#\u0000 \u0000p\u0000r\u0000a\u0000c\u0000t\u0000i\u0000c\u0000a\u0000_\u0000c\u0000r\u0000e\u0000a\u0000c\u0000i\u0000o\u0000n\u0000_\u0000a\u0000p\u0000i\u0000\r\u0000 \u0000\r\u0000 \u0000\r\u0000 \u0000#\u0000#\u0000 \u0000P\u0000u\u0000e\u0000s\u0000t\u0000a\u0000 \u0000e\u0000n\u0000 \u0000m\u0000a\u0000r\u0000c\u0000h\u0000a\u0000 \u0000\r\u0000 \u00001\u0000.\u0000 \u0000C\u0000l\u0000o\u0000n\u0000a\u0000r\u0000 \u0000d\u0000e\u0000 \u0000.\u0000.\u0000.\u0000.\u0000.\u0000.\u0000.\u0000.\u0000.\u0000.\u0000\r\u0000 \u0000`\u0000`\u0000`\u0000s\u0000h\u0000e\u0000l\u0000l\u0000\r\u0000 \u0000g\u0000i\u0000t\u0000 \u0000c\u0000l\u0000o\u0000n\u0000e\u0000 \u0000x\u0000x\u0000x\u0000x\u0000\r\u0000 \u0000\r\u0000 \u0000`\u0000`\u0000`\u0000\r\u0000 \u00002\u0000.\u0000 \u0000D\u0000u\u0000p\u0000l\u0000i\u0000c\u0000a\u0000r\u0000 \u0000.\u0000e\u0000n\u0000v\u0000-\u0000t\u0000e\u0000m\u0000p\u0000l\u0000a\u0000t\u0000e\u0000 \u0000y\u0000 \u0000r\u0000e\u0000n\u0000o\u0000m\u0000b\u0000r\u0000a\u0000r\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/sebastian438/practica_creacion_api/issues"
   },
-  "homepage": "https://github.com/sebastian438/practica_creacion_api#readme"
+  "homepage": "https://github.com/sebastian438/practica_creacion_api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.15.1"
+  }
 }
