@@ -34,6 +34,9 @@ app.use(cors({
     origin: whiteList,
 }))
 
+app.use(express.urlencoded());
+app.use(express.json());
+
 //Rutas
 
 app.use('/api/v1', publicRoutes)

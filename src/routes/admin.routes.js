@@ -1,6 +1,6 @@
 const { Router } = require('express');
-const { isAdmin } = require('../middlewares/isAdmin');
-const {getInAdmin} = require('../controllers/admin.controllers.js')
+const { isAdmin } = require('../middlewares/isAdmin.js');
+const { getInAdmin } = require('../controllers/admin.controllers.js')
 
 const router = Router()
 
