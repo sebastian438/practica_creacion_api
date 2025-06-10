@@ -13,6 +13,10 @@ const Product = new Schema({
     precio: {
         type: Number,
         required: true
+    },
+    categoria: {
+        type: String,
+        required: true
     }
 })
 

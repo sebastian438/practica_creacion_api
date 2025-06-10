@@ -1,6 +1,11 @@
 const express = require('express')
 const cors = require('cors')
-const publicRoutes = require('./routes/publics.routes.js')
+const {
+    publicRoutes,
+    adminRoutes,
+    authenticationRoutes
+} = require('./routes/index.js')
+
 
 const { connection } = require('./utils/dbconnect.js')
 
@@ -32,6 +37,10 @@ app.use(cors({
 //Rutas
 
 app.use('/api/v1', publicRoutes)
+app.use('/api/v1/auth', authenticationRoutes)
+app.use('/api/v1/admin', adminRoutes)
+
+
 
 app.listen(port, () => {
     console.log(`Server on ${port}`)

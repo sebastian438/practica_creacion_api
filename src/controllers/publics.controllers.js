@@ -1,10 +1,23 @@
 const Product = require('../models/product.model')
 
 //GET ALL PRODUCTS
-const getAllProducts = (req, res) => {
-    res.json({
-        msg: 'Getting all porducts'
-    })
+const getAllProducts = async (req, res) => {
+
+    try {
+        const productos = await Product.find()
+        console.log(productos)
+
+        return res.status(200).json({
+            ok: true,
+            productos
+        })
+
+    } catch (error) {
+        return res.status(404).json({
+            ok: false,
+            msg: 'Error al traer los productos'
+        })
+    }
 }
 
 //GET PRODUCT BY CATEGORY
@@ -15,7 +28,12 @@ const getProductsByCategory = (req, res) => {
 }
 
 //GET PRODUCT BY ID
-const getProductById = (req, res) => {
+const getProductById = async (req, res) => {
+
+    const { id } = req.params;
+    const producto = await Product.findOne({ _id: id })
+    console.log(producto)
+
     res.status(200).json({
         msg: 'Getting porducts by id'
     })
@@ -23,26 +41,26 @@ const getProductById = (req, res) => {
 
 //CREATE PRODUCT
 const createProducts = async (req, res) => {
-    console.log(req.body)
+    const body = req.body
 
-    const nuevoProducto = {
+    //TODO: comprobar que el producto existe, si existe retorna un 404
 
+    const producto = new Product(body)
+    try {
+        const SavedProduct = await producto.save()
+
+        return res.status(201).json({
+            ok: true,
+            SavedProduct
+        })
+
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({
+            ok: false,
+            msg: 'Póngase en contacto con el administrador'
+        })
     }
-
-    const producto = new Product(nuevoProducto)
-
-    const SavedProduct = await producto.save()
-
-    return res.status(201).json({
-        ok: true,
-        SavedProduct
-    })
-
-    console.log(producto);
-
-    res.status(201).json({
-        msg: 'Creating porduct'
-    })
 }
 
 //UPDATE PRODUCT BY ID
